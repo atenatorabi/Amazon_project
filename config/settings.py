@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django_render_partial',
     'home_app',
     'product_app',
+    'news_app',
 ]
 
 MIDDLEWARE = [

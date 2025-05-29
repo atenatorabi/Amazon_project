@@ -18,10 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from home_app.views import home_page
 from product_app.views import *
+from news_app.views import news
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('' , home_page , name='home' ),
     path('products/' , product_list , name='products-list'),
     path('details/<slug>/' , product_details , name='product-details'),
-    path('category/<id>/' , product_categories , name='category')
+    path('category/<id>/' , product_categories , name='category'),
+    path('news/' , news , name='news')
 ]

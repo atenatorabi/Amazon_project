@@ -40,4 +40,3 @@ def product_categories(request , id):
 
 
 
-

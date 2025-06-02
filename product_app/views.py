@@ -3,7 +3,7 @@ from .models import Product_List , ProductCategory , Product_color
 # Create your views here.
 new_pro = None
 def product_list(request):
-    products = Product_List.objects.filter(is_active=True).order_by('price')
+    products = Product_List.objects.filter(is_active=True).order_by('-id')
     new_products = products.order_by('-id')[:3]
     global new_pro
     new_pro = new_products

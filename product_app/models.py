@@ -33,6 +33,7 @@ class Product_List(models.Model):
     descroption = models.CharField(max_length=300, verbose_name='توضیحات')
     off = models.IntegerField(null=True, blank=True, verbose_name='تخفیف')
     count = models.IntegerField(verbose_name='تعداد موجودی')
+    image = models.ImageField(upload_to='products/' , verbose_name='اضافه کردن عکس محصول' , null=True , blank=True)
     slug = models.SlugField(max_length=200 , allow_unicode=True , null=True , blank=True)
     def save(self,**kwargs):
         self.slug = self.title.replace(' ' , '-')

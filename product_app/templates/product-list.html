@@ -23,7 +23,10 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="/static/images/shop/product.jpg" alt="">
+                                            {% if product.image %}
+                                                <img src="{{ product.image.url }}" class="product-image"
+                                                     alt="{{ product.title }}">
+                                            {% endif %}
                                             <h2>{{ product.price }}تومان</h2>
                                             <p>{{ product.title }}</p>
                                             <a href="{% url 'product-details' product.slug %}"
@@ -38,8 +41,9 @@
                                                    class="btn btn-default add-to-cart"><i
                                                         class="fa fa-shopping-cart"></i>دیدن جزئیات محصول</a>
                                             </div>
-                                           {% if product in new_pro %}
-                                             <img src="/static/images/product-details/new.png" class="newarrival" alt="">
+                                            {% if product in new_pro %}
+                                                <img src="/static/images/product-details/new.png" class="newarrival"
+                                                     alt="">
                                             {% endif %}
                                         </div>
                                     </div>

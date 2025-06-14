@@ -1,4 +1,8 @@
 {% extends 'layout.html' %}
+{% block title %}
+    اخبار مهم
+{% endblock %}
+
 {% block content %}
     <div class="container">
         <div class="row">
@@ -23,8 +27,11 @@
 								</span>
                             </div>
                             <a href="">
-                                <img src="/static/images/blog/blog-one.jpg" alt="">
+                                {% if new.images %}
+                                    <img src="{{ new.images.url }}" class="new-image" alt="{{ new.news_name }}">
+                                {% endif %}
                             </a>
+
                             <p>{{ new.news }}</p>
                             <a class="btn btn-primary" href="">ادامـه مطلب</a>
                         </div>

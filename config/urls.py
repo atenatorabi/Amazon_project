@@ -17,7 +17,10 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path
+from django.urls import path , include
+import contactUs_app.urls
+
+import contactUs_app
 from home_app.views import home_page
 from product_app.views import *
 from news_app.views import news
@@ -27,7 +30,8 @@ urlpatterns = [
     path('products/' , product_list , name='products-list'),
     path('details/<slug>/' , product_details , name='product-details'),
     path('category/<id>/' , product_categories , name='category'),
-    path('news/' , news , name='news')
+    path('news/' , news , name='news'),
+    path('contactus/', include(contactUs_app.urls)),
 ]
 
 if settings.DEBUG:

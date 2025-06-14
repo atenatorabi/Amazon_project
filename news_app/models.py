@@ -8,6 +8,7 @@ class News(models.Model):
     date = models.DateField(auto_now_add=True, verbose_name='تاریح انتشار')
     time = models.TimeField(auto_now_add=True, verbose_name='ساعت انتشار')
     news = models.CharField(max_length=400, verbose_name='اخبار ما')
+    images = models.ImageField(upload_to='products/', verbose_name='اضافه کردن عکس خبر', null=True, blank=True)
 
     def __str__(self):
         return f"{self.news_name} , {self.user}"
